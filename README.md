@@ -41,13 +41,13 @@ I love working across **C, C++, Java, JavaScript, Python**, and integrating **AI
 
 ## 🧰 Repository Structure
 
-01_C_Projects/
-02_CPP_Projects/
-03_Java_Projects/
-04_JS_WebDev/
-05_Python_AI_Projects/
-06_DataScience_Projects/
-07_SIH_Projects/
+01_C_Projects/\n
+02_CPP_Projects/\n
+03_Java_Projects/\n
+04_JS_WebDev/\n
+05_Python_AI_Projects/\n
+06_DataScience_Projects/\n
+07_SIH_Projects/\n
 
 
 
