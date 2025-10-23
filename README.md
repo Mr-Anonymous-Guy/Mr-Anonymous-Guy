@@ -56,18 +56,18 @@ I love working across **C, C++, Java, JavaScript, Python**, and integrating **AI
 
 ## 🏆 Achievements
 
-- 🥇 Smart India Hackathon Finalist (2024–25)  
+- 🥇 Smart India Hackathon Participant (2024–25)  
 - 💼 Built 30+ cross-language & AI-powered systems  
-- 🌟 Top 1% GitHub Profile for AI & Automation Projects  
+ 
 
 ---
 
 ## 📬 Connect with Me
 
 🌐 [Portfolio Website](https://mr-anonymous-guy.github.io)  
-💼 [LinkedIn](https://linkedin.com/in/mr-anonymous-guy)  
+💼 [LinkedIn](https://www.linkedin.com/in/mr-anonymous-9727b2386/)  
 🐙 [GitHub](https://github.com/mr-anonymous-Guy)  
-📧 **mr.anonymous.dev@gmail.com**
+📧 **mr.anonymous071105@gmail.com**
 
 
 | Repo                    | Description               |
