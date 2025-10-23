@@ -78,3 +78,19 @@ I love working across **C, C++, Java, JavaScript, Python**, and integrating **AI
 | 🧾 `AI-Resume-Builder`  | GPT-Powered Resume System |
 | 🩺 `HealthAI`           | Medical Chatbot           |
 | 🏆 `Namaste-Sync`       | SIH FHIR Project          |
+
+
+
+## 🧩 Project Repositories
+
+| Category | Repository |
+|-----------|-------------|
+| 🧱 C Projects | [01_C_Projects](https://github.com/Mr-Anonymous-Guy/01_C_Projects) |
+| ⚙️ C++ Projects | [02_CPP_Projects](https://github.com/Mr-Anonymous-Guy/02_CPP_Projects) |
+| ☕ Java Projects | [03_Java_Projects](https://github.com/Mr-Anonymous-Guy/03_Java_Projects) |
+| 💻 Web Development | [04_JS_WebDev](https://github.com/Mr-Anonymous-Guy/04_JS_WebDev) |
+| 🧠 Python AI Projects | [05_Python_AI_Projects](https://github.com/Mr-Anonymous-Guy/05_Python_AI_Projects) |
+| 📊 Data Science Projects | [06_DataScience_Projects](https://github.com/Mr-Anonymous-Guy/06_DataScience_Projects) |
+| 🏆 SIH Projects | [07_SIH_Projects](https://github.com/Mr-Anonymous-Guy/07_SIH_Projects) |
+| 🌐 Portfolio | [Portfolio](https://github.com/Mr-Anonymous-Guy/Portfolio) |
+
