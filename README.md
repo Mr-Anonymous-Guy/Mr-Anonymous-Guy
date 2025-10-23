@@ -65,7 +65,7 @@ I love working across **C, C++, Java, JavaScript, Python**, and integrating **AI
 ## 📬 Connect with Me
 
 🌐 [Portfolio Website](https://mr-anonymous-guy.github.io)  
-💼 [LinkedIn](https://www.linkedin.com/in/mr-anonymous-9727b2386/)  
+💼 [LinkedIn](https://www.linkedin.com/in/Mr-Anonymous-Guy/)  
 🐙 [GitHub](https://github.com/mr-anonymous-Guy)  
 📧 **mr.anonymous071105@gmail.com**
 
