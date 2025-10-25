@@ -1,102 +1,26 @@
-# 👋 Hey, I'm **Mr-Anonymous-Guy**  
-### 💻 Full Stack Developer | AI Engineer | SIH Finalist | Freelancer  
+<h1 align="center">Hi 👋, I'm Mr-Anonymous-Guy</h1>
+<h3 align="center">💻 Full Stack Developer | AI Engineer | SIH Finalist | Freelancer 🚀 I build intelligent systems that blend AI, automation, and design to solve real-world problems. I love working across C, C++, Java, JavaScript, Python, and integrating AI into web apps.</h3>
 
-🚀 I build intelligent systems that blend **AI, automation, and design** to solve real-world problems.  
-I love working across **C, C++, Java, JavaScript, Python**, and integrating **AI into web apps**.
+- 🔭 I’m currently working on [Fhit-tech](https://github.com/Mr-Anonymous-Guy/Fhir-Tech)
 
----
+- 🌱 I’m currently learning **Data Analytics**
 
-## 🧩 Skills & Tools
+- 💬 Ask me about **react, node.js, pandas, django, sql**
 
-**Languages:** C, C++, Java, JavaScript, Python  
-**Frontend:** React, HTML, CSS, Tailwind  
-**Backend:** Flask, Django, FastAPI, Node.js, MySQL  
-**AI/ML:** LangChain, OpenAI API, TensorFlow, Scikit-learn  
-**Data:** Pandas, Matplotlib, PowerBI  
-**Tools:** Git, Docker, Firebase, Postman, VS Code  
+- 📫 How to reach me **mr.anonymous071105@gmail.com**
 
----
+- ⚡ Fun fact **Learning coding since 15**
 
-## 🌍 Highlight Projects
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+<a href="https://linkedin.com/in/mr-anonymous-guy" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mr-anonymous-guy" height="30" width="40" /></a>
+</p>
 
-| Project | Description | Tech Stack |
-|:-|:-|:-|
-| [FinSmart](https://github.com/mr_anonymous-Guy/FinSmart) | AI Expense Tracker with Budget Alerts | React + Flask + MySQL |
-| [AI Chatbot Builder](https://github.com/mr_anonymous-Guy/AI-Chatbot-Builder) | Build custom chatbots for any business | Next.js + FastAPI + LangChain |
-| [Namaste-Sync](https://github.com/mr_anonymous-Guy/Namaste-Sync) | FHIR R4 Terminology Service | Flask + FHIR API |
-| [EduSense](https://github.com/mr_anonymous-Guy/EduSense) | AI Study Assistant | Flask + GPT |
-| [FreelancerHub](https://github.com/mr_anonymous-Guy/FreelancerHub) | Freelance Income & Insights Dashboard | React + Python |
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="40" height="40"/> </a> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" alt="flask" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> <a href="https://vuetifyjs.com/en/" target="_blank" rel="noreferrer"> <img src="https://bestofjs.org/logos/vuetify.svg" alt="vuetify" width="40" height="40"/> </a> </p>
 
----
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=mr-anonymous-guy&show_icons=true&locale=en&layout=compact" alt="mr-anonymous-guy" /></p>
 
-## 🧠 Featured AI Projects
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=mr-anonymous-guy&show_icons=true&locale=en" alt="mr-anonymous-guy" /></p>
 
-- 🤖 **DocuMind:** AI PDF Analyzer with Llama 3  
-- 🧾 **AI Resume Builder:** Smart resume creator with GPT  
-- 💬 **Smart Recruiter:** AI candidate screening system  
-- 📈 **Investment Predictor:** ML-based SIP forecast app  
-- 🩺 **HealthAI:** Symptom-based Chatbot Assistant  
-
----
-
-## 🧰 Repository Structure
-
-- 01_C_Projects/
-
-- 02_CPP_Projects/
-
-- 03_Java_Projects/
-
-- 04_JS_WebDev/
-
-- 05_Python_AI_Projects/
-
-- 06_DataScience_Projects/
-
-- 07_SIH_Projects/
-
-
-
-
----
-
-## 🏆 Achievements
-
-- 🥇 Smart India Hackathon Participant (2024–25)  
-- 💼 Built 30+ cross-language & AI-powered systems  
- 
-
----
-
-## 📬 Connect with Me
-
-🌐 [Portfolio Website](https://mr-anonymous-guy.github.io)  
-💼 [LinkedIn](https://www.linkedin.com/in/Mr-Anonymous-Guy/)  
-🐙 [GitHub](https://github.com/mr-anonymous-Guy)  
-📧 **mr.anonymous071105@gmail.com**
-
-
-| Repo                    | Description               |
-| :---------------------- | :------------------------ |
-| 🧠 `FinSmart`           | AI Expense Tracker        |
-| 💬 `AI-Chatbot-Builder` | Chatbot SaaS              |
-| 📘 `EduSense`           | AI Study Assistant        |
-| 🧾 `AI-Resume-Builder`  | GPT-Powered Resume System |
-| 🩺 `HealthAI`           | Medical Chatbot           |
-| 🏆 `Namaste-Sync`       | SIH FHIR Project          |
-
-
-
-## 🧩 Project Repositories
-
-| Category | Repository |
-|-----------|-------------|
-| 🧱 C Projects | [01_C_Projects](https://github.com/Mr-Anonymous-Guy/01_C_Projects) |
-| ⚙️ C++ Projects | [02_CPP_Projects](https://github.com/Mr-Anonymous-Guy/02_CPP_Projects) |
-| ☕ Java Projects | [03_Java_Projects](https://github.com/Mr-Anonymous-Guy/03_Java_Projects) |
-| 💻 Web Development | [04_JS_WebDev](https://github.com/Mr-Anonymous-Guy/04_JS_WebDev) |
-| 🧠 Python AI Projects | [05_Python_AI_Projects](https://github.com/Mr-Anonymous-Guy/05_Python_AI_Projects) |
-| 📊 Data Science Projects | [06_DataScience_Projects](https://github.com/Mr-Anonymous-Guy/06_DataScience_Projects) |
-| 🏆 SIH Projects | [07_SIH_Projects](https://github.com/Mr-Anonymous-Guy/07_SIH_Projects) |
-| 🌐 Portfolio | [Portfolio](https://github.com/Mr-Anonymous-Guy/Portfolio) |
-
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=mr-anonymous-guy&" alt="mr-anonymous-guy" /></p>
