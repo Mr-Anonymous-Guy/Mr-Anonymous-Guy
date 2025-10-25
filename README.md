@@ -1,8 +1,6 @@
 <h1 align="center">Hi 👋, I'm Mr-Anonymous-Guy</h1>
 <h3 align="center">💻 Full Stack Developer | AI Engineer | SIH Finalist | Freelancer 🚀 I build intelligent systems that blend AI, automation, and design to solve real-world problems. I love working across C, C++, Java, JavaScript, Python, and integrating AI into web apps.</h3>
 
-<p align="left"> <a href="https://twitter.com/" target="blank"><img src="https://img.shields.io/twitter/follow/?logo=twitter&style=for-the-badge" alt="" /></a> </p>
-
 - 🔭 I’m currently working on [Fhit-tech](https://github.com/Mr-Anonymous-Guy/Fhir-Tech)
 
 - 🌱 I’m currently learning **Data Analytics**
