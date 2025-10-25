@@ -9,7 +9,7 @@
 
 - 📫 How to reach me **mr.anonymous071105@gmail.com**
 
-- ⚡ Fun fact **Learning coding since 15**
+- ⚡ Fun fact **Learning coding since 15 years old**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
