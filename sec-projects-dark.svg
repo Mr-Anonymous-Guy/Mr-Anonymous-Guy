@@ -1,0 +1,39 @@
+<svg viewBox="0 0 900 70" width="900" height="70" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hdr-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="30%" stop-color="#ff004d"/>
+      <stop offset="70%" stop-color="#570000"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="hdr-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff004d" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#fdffff"/>
+      <stop offset="100%" stop-color="#ff004d" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="hdr-glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800;900&amp;display=swap');
+    .hdr-txt { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 24px; fill: #fdffff; letter-spacing: 2px; }
+    .star-hdr { animation: starFlash 2s infinite ease-in-out; }
+    @keyframes starFlash { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.3); } }
+  </style>
+
+  <rect width="900" height="70" rx="12" fill="url(#hdr-bg)"/>
+  <rect width="900" height="70" rx="12" fill="none" stroke="#ff004d" stroke-width="2" filter="url(#hdr-glow)"/>
+
+  <!-- Decorative Stars -->
+  <circle cx="40" cy="35" r="3" fill="#fdffff" class="star-hdr"/>
+  <circle cx="860" cy="35" r="3" fill="#fdffff" class="star-hdr"/>
+
+  <!-- Title Text -->
+  <text x="450" y="44" class="hdr-txt" text-anchor="middle" filter="url(#hdr-glow)">🤖 FEATURED AI &amp; FULL-STACK PROJECTS</text>
+
+  <!-- Bottom Accent Shimmer Line -->
+  <rect x="150" y="60" width="600" height="2" fill="url(#hdr-line)"/>
+</svg>

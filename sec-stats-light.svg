@@ -1,0 +1,27 @@
+<svg viewBox="0 0 900 70" width="900" height="70" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hdr-light-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#ffe6ed"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="hdr-light-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ff004d"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800;900&amp;display=swap');
+    .hdr-light-txt { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 24px; fill: #000000; letter-spacing: 2px; }
+  </style>
+
+  <rect width="900" height="70" rx="12" fill="url(#hdr-light-bg)" stroke="#000000" stroke-width="2"/>
+
+  <!-- Title Text -->
+  <text x="450" y="44" class="hdr-light-txt" text-anchor="middle">📊 GITHUB STATS &amp; TOP LANGUAGES</text>
+
+  <!-- Bottom Accent Shimmer Line -->
+  <rect x="150" y="60" width="600" height="2" fill="url(#hdr-light-line)"/>
+</svg>
