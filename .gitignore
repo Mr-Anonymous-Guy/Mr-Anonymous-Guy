@@ -1,10 +1,10 @@
-# Scratch & Helper Scripts
+# Scratch & Temporary Scripts
 scratch/
 *.py
 *.pyc
 __pycache__/
 
-# OS & Environment
+# OS & Build Artifacts
 .DS_Store
 Thumbs.db
 *.log

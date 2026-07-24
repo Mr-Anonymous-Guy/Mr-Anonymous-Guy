@@ -2,15 +2,15 @@
 
 <!-- ✨ Animated Hero Banner (Dark / Light Auto-Switch) ✨ -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./banner.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="./banner-light.svg?v=1">
-  <img src="./banner.svg?v=1" alt="Mr. Anonymous — Student & AI Engineer" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/svgs/banner.svg?v=1">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/svgs/banner-light.svg?v=1">
+  <img src="./assets/svgs/banner.svg?v=1" alt="Mr. Anonymous — Student & AI Engineer" width="100%"/>
 </picture>
 
 <br/><br/>
 
 <!-- 🪪 Swinging Lanyard ID Card (React Bits style, pure SVG) -->
-<img src="./lanyard.svg?v=4" alt="Mr. Anonymous ID badge" width="360"/>
+<img src="./assets/svgs/lanyard.svg?v=4" alt="Mr. Anonymous ID badge" width="360"/>
 
 <br/><br/>
 
@@ -24,9 +24,9 @@
 
 <!-- 🤖 FEATURED PROJECTS HEADER -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./sec-projects-dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./sec-projects-light.svg?v=2">
-  <img src="./sec-projects-dark.svg?v=2" alt="Featured Projects" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/svgs/sec-projects-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/svgs/sec-projects-light.svg?v=2">
+  <img src="./assets/svgs/sec-projects-dark.svg?v=2" alt="Featured Projects" width="100%"/>
 </picture>
 
 </div>
@@ -45,23 +45,23 @@
 
 <!-- 📊 STATS & LANGUAGES HEADER -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./sec-stats-dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./sec-stats-light.svg?v=2">
-  <img src="./sec-stats-dark.svg?v=2" alt="GitHub Stats & Top Languages" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/svgs/sec-stats-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/svgs/sec-stats-light.svg?v=2">
+  <img src="./assets/svgs/sec-stats-dark.svg?v=2" alt="GitHub Stats & Top Languages" width="100%"/>
 </picture>
 
 <br/><br/>
 
-<img src="./stats.svg?v=2" alt="GitHub Stats" height="185"/>
-<img src="./langs.svg?v=3" alt="Top Languages" height="185"/>
+<img src="./assets/svgs/stats.svg?v=2" alt="GitHub Stats" height="185"/>
+<img src="./assets/svgs/langs.svg?v=3" alt="Top Languages" height="185"/>
 
 <br/><br/>
 
 <!-- 🛩️ JET HEATMAP HEADER -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./sec-heatmap-dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./sec-heatmap-light.svg?v=2">
-  <img src="./sec-heatmap-dark.svg?v=2" alt="Real-Time Jet Contribution Heatmap" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/svgs/sec-heatmap-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/svgs/sec-heatmap-light.svg?v=2">
+  <img src="./assets/svgs/sec-heatmap-dark.svg?v=2" alt="Real-Time Jet Contribution Heatmap" width="100%"/>
 </picture>
 
 <br/><br/>
@@ -72,22 +72,22 @@
 
 <!-- 🏆 TROPHIES HEADER -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./sec-trophies-dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./sec-trophies-light.svg?v=2">
-  <img src="./sec-trophies-dark.svg?v=2" alt="Developer Achievements & Trophies" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/svgs/sec-trophies-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/svgs/sec-trophies-light.svg?v=2">
+  <img src="./assets/svgs/sec-trophies-dark.svg?v=2" alt="Developer Achievements & Trophies" width="100%"/>
 </picture>
 
 <br/><br/>
 
-<img src="./trophies.svg?v=2" alt="Developer Trophies" width="95%"/>
+<img src="./assets/svgs/trophies.svg?v=2" alt="Developer Trophies" width="95%"/>
 
 <br/><br/>
 
 <!-- 📫 LET'S CONNECT HEADER -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./sec-connect-dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./sec-connect-light.svg?v=2">
-  <img src="./sec-connect-dark.svg?v=2" alt="Let's Connect & Collaborate" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/svgs/sec-connect-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/svgs/sec-connect-light.svg?v=2">
+  <img src="./assets/svgs/sec-connect-dark.svg?v=2" alt="Let's Connect & Collaborate" width="100%"/>
 </picture>
 
 <br/><br/>
