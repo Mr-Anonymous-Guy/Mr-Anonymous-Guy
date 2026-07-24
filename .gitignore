@@ -1,0 +1,11 @@
+# Scratch & Helper Scripts
+scratch/
+*.py
+*.pyc
+__pycache__/
+
+# OS & Environment
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
