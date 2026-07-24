@@ -2,9 +2,9 @@
 
 <!-- ✨ Animated Banner ✨ -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./banner.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="./banner-light.svg?v=1">
-  <img src="./banner.svg?v=1" alt="Mr. Anonymous — Student & AI Engineer" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Mr-Anonymous-Guy/Mr-Anonymous-Guy/main/banner.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mr-Anonymous-Guy/Mr-Anonymous-Guy/main/banner-light.svg?v=2">
+  <img src="https://raw.githubusercontent.com/Mr-Anonymous-Guy/Mr-Anonymous-Guy/main/banner.svg?v=2" alt="Mr. Anonymous — Student & AI Engineer" width="100%"/>
 </picture>
 
 </div>
@@ -16,7 +16,7 @@
 <td width="38%" align="center" valign="middle">
 
 <!-- 🪪 Swinging Lanyard ID Card (React Bits style, pure SVG) -->
-<img src="./lanyard.svg?v=2" alt="Mr. Anonymous ID badge" width="330"/>
+<img src="https://raw.githubusercontent.com/Mr-Anonymous-Guy/Mr-Anonymous-Guy/main/lanyard.svg?v=2" alt="Mr. Anonymous ID badge" width="330"/>
 
 </td>
 <td width="62%" valign="middle">
@@ -43,8 +43,8 @@
 
 ### 📊 GitHub Stats & Top Languages
 
-<img src="./stats.svg?v=2" alt="GitHub Stats" height="185"/>
-<img src="./langs.svg?v=3" alt="Top Languages" height="185"/>
+<img src="https://raw.githubusercontent.com/Mr-Anonymous-Guy/Mr-Anonymous-Guy/main/stats.svg?v=2" alt="GitHub Stats" height="185"/>
+<img src="https://raw.githubusercontent.com/Mr-Anonymous-Guy/Mr-Anonymous-Guy/main/langs.svg?v=3" alt="Top Languages" height="185"/>
 
 <br/><br/>
 
@@ -57,7 +57,7 @@
 <!-- 🏆 Trophies (local animated SVG — always loads) -->
 ### 🏆 Developer Achievements & Trophies
 
-<img src="./trophies.svg?v=2" alt="Developer Trophies" width="95%"/>
+<img src="https://raw.githubusercontent.com/Mr-Anonymous-Guy/Mr-Anonymous-Guy/main/trophies.svg?v=2" alt="Developer Trophies" width="95%"/>
 
 <br/><br/>
 
