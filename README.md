@@ -1,40 +1,33 @@
 <div align="center">
 
-<!-- ✨ Animated Hero Banner (Dark / Light Auto-Switch) ✨ -->
+<!-- ✨ Animated Banner ✨ -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./banner.svg?v=1">
   <source media="(prefers-color-scheme: light)" srcset="./banner-light.svg?v=1">
   <img src="./banner.svg?v=1" alt="Mr. Anonymous — Student & AI Engineer" width="100%"/>
 </picture>
 
-<br/><br/>
-
-<!-- 🤖 FEATURED PROJECTS HEADER -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./sec-projects-dark.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="./sec-projects-light.svg?v=1">
-  <img src="./sec-projects-dark.svg?v=1" alt="Featured Projects" width="100%"/>
-</picture>
-
 </div>
 
 <br/>
 
-<table align="center" border="0" width="100%">
+<table align="center" border="0">
 <tr>
-<td width="36%" align="center" valign="middle">
+<td width="38%" align="center" valign="middle">
 
 <!-- 🪪 Swinging Lanyard ID Card (React Bits style, pure SVG) -->
 <img src="./lanyard.svg?v=2" alt="Mr. Anonymous ID badge" width="330"/>
 
 </td>
-<td width="64%" valign="middle">
+<td width="62%" valign="middle">
 
-| 🚀 Project | 💻 Tech Stack | 📌 Description |
+### 🤖 My AI & Full-Stack Projects
+
+| 🚀 Project | 💻 Tech | 📌 Description |
 |:---|:---:|:---|
-| [🏥 **ArogyaAI**](https://github.com/Mr-Anonymous-Guy/ArogyaAI) | `Python` `FastAPI` `RAG` `React` | AI-powered healthcare intelligence platform with risk prediction, medical pipelines &amp; explainable insights. |
-| [💡 **FinSmart**](https://github.com/Mr-Anonymous-Guy/FinSmart) | `React` `FastAPI` `PostgreSQL` | Personal finance dashboard with AI-driven budgeting, transaction tracking &amp; financial insights. |
-| [🌐 **Portfolio App**](https://anonymousguy.online/) | `Next.js` `TypeScript` `Framer` | Personal developer portfolio showcasing advanced animations, interactive UI &amp; smooth state management. |
+| [🏥 **ArogyaAI**](https://github.com/Mr-Anonymous-Guy/ArogyaAI) | `Python` `FastAPI` `RAG` | AI healthcare intelligence platform with risk prediction &amp; medical data pipelines. |
+| [💡 **FinSmart**](https://github.com/Mr-Anonymous-Guy/FinSmart) | `React` `FastAPI` `PostgreSQL` | Personal finance dashboard with AI-driven budgeting &amp; transaction tracking. |
+| [🌐 **Portfolio App**](https://anonymousguy.online/) | `Next.js` `TypeScript` `Framer` | Personal developer portfolio showcasing advanced animations &amp; interactive UI. |
 
 <br/>
 
@@ -48,54 +41,27 @@
 
 <div align="center">
 
-<!-- 📊 STATS & LANGUAGES HEADER -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./sec-stats-dark.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="./sec-stats-light.svg?v=1">
-  <img src="./sec-stats-dark.svg?v=1" alt="GitHub Stats & Languages" width="100%"/>
-</picture>
-
-<br/><br/>
+### 📊 GitHub Stats & Top Languages
 
 <img src="./stats.svg?v=2" alt="GitHub Stats" height="185"/>
 <img src="./langs.svg?v=3" alt="Top Languages" height="185"/>
 
 <br/><br/>
 
-<!-- 🛩️ JET HEATMAP HEADER -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./sec-heatmap-dark.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="./sec-heatmap-light.svg?v=1">
-  <img src="./sec-heatmap-dark.svg?v=1" alt="Real-Time Jet Heatmap" width="100%"/>
-</picture>
-
-<br/><br/>
+### 🛩️ Real-Time Jet Contribution Heatmap
 
 ![GitHub jet heatmap](https://raw.githubusercontent.com/Mr-Anonymous-Guy/Mr-Anonymous-Guy/main/dist/github-jet.svg)
 
 <br/><br/>
 
-<!-- 🏆 ACHIEVEMENTS & TROPHIES HEADER -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./sec-trophies-dark.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="./sec-trophies-light.svg?v=1">
-  <img src="./sec-trophies-dark.svg?v=1" alt="Developer Achievements" width="100%"/>
-</picture>
-
-<br/><br/>
+<!-- 🏆 Trophies (local animated SVG — always loads) -->
+### 🏆 Developer Achievements & Trophies
 
 <img src="./trophies.svg?v=2" alt="Developer Trophies" width="95%"/>
 
 <br/><br/>
 
-<!-- 📫 LET'S CONNECT HEADER -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./sec-connect-dark.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="./sec-connect-light.svg?v=1">
-  <img src="./sec-connect-dark.svg?v=1" alt="Let's Connect" width="100%"/>
-</picture>
-
-<br/><br/>
+### 📫 Let's Connect
 
 <a href="mailto:mr.anonymous071105@gmail.com"><img src="https://img.shields.io/badge/Email-ff004d?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
 <a href="https://github.com/Mr-Anonymous-Guy"><img src="https://img.shields.io/badge/GitHub-280000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
