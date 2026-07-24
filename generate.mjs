@@ -30,9 +30,9 @@ const JET_X_START = 35;
 const JET_X_END = 478;
 const LOOP_DUR = 20; // seconds, one full there-and-back pass
 const MAX_TARGETS = 12; // how many "busiest" days the jet fires on
-const FLASH_COLOR = "#39d353";
-const BULLET_COLOR = "#7ee787";
-const BLAST_COLOR = "#56d364";
+const FLASH_COLOR = "#ff004d";
+const BULLET_COLOR = "#ff80ab";
+const BLAST_COLOR = "#ff004d";
 const PAD_Y = 128; // where bullets launch from (just under the grid)
 
 if (!USERNAME) {
@@ -79,6 +79,17 @@ async function fetchWeeks() {
   return json.data.user.contributionsCollection.contributionCalendar.weeks;
 }
 
+
+function mapColorToRedTheme(c) {
+  if (!c || c === "#161b22" || c === "#ebedf0") return c || "#161b22";
+  const cl = c.toLowerCase();
+  if (cl === "#9be9a8") return "#ff80ab";
+  if (cl === "#40c463") return "#ff4081";
+  if (cl === "#30a14e" || cl === "#26a641" || cl === "#39d353") return "#ff004d";
+  if (cl === "#216e39" || cl === "#0e4429" || cl === "#006d32") return "#a7002c";
+  return "#ff004d";
+}
+
 function buildCells(weeks) {
   // Take the most recent COLS weeks, left-padding with empty weeks if the
   // account is newer than COLS weeks old.
@@ -100,7 +111,7 @@ function buildCells(weeks) {
         row,
         x: GRID_X + col * STEP,
         y: GRID_Y + row * STEP,
-        color: day.color || "#161b22",
+        color: mapColorToRedTheme(day.color),
         count: day.contributionCount || 0,
         date: day.date,
       });
@@ -200,10 +211,10 @@ function buildStars() {
 function buildJet() {
   return `<g id="jet">
   <g transform="translate(0,0)">
-    <polygon points="0,-16 8,6 4,3 -4,3 -8,6" fill="#58a6ff" stroke="#1f6feb" stroke-width="1"/>
-    <polygon points="-8,6 -14,12 -4,7" fill="#388bfd"/>
-    <polygon points="8,6 14,12 4,7" fill="#388bfd"/>
-    <circle cx="0" cy="-6" r="2.2" fill="#c9e6ff"/>
+    <polygon points="0,-16 8,6 4,3 -4,3 -8,6" fill="#ff004d" stroke="#a7002c" stroke-width="1"/>
+    <polygon points="-8,6 -14,12 -4,7" fill="#ff4081"/>
+    <polygon points="8,6 14,12 4,7" fill="#ff4081"/>
+    <circle cx="0" cy="-6" r="2.2" fill="#ffcdd2"/>
     <polygon points="-3,7 3,7 0,15" fill="#f0883e">
       <animate attributeName="opacity" values="0.5;1;0.6;1" dur="0.18s" repeatCount="indefinite"/>
     </polygon>
