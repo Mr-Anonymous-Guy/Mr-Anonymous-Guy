@@ -10,7 +10,7 @@
 <br/><br/>
 
 <!-- 🪪 Swinging Lanyard ID Card (React Bits style, pure SVG) -->
-<img src="./lanyard.svg?v=2" alt="Mr. Anonymous ID badge" width="360"/>
+<img src="./lanyard.svg?v=3" alt="Mr. Anonymous ID badge" width="360"/>
 
 <br/><br/>
 
