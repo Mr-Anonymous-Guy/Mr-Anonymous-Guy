@@ -24,20 +24,17 @@ jobs:
       - name: Skill radar
         run: python scripts/radar.py --data assets/skills.json -o assets/radar
 
-      # Language radar (uses assets/languages.json if present, otherwise live GitHub stats)
+      # Language radar (calculated live from real language byte counts across your repos)
       - name: Language radar
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
-          if [ -f assets/languages.json ]; then
-            python scripts/radar.py --data assets/languages.json -o assets/radar-langs --values
-          else
-            python scripts/radar.py \
-              --github "${{ github.repository_owner }}" \
-              -o assets/radar-langs \
-              --limit 7 --values --curve 0.4 \
-              --exclude "shell,makefile,dockerfile,batchfile,procfile"
-          fi
+          python scripts/radar.py \
+            --github "${{ github.repository_owner }}" \
+            -o assets/radar-langs \
+            --limit 7 --values --curve 0.4 \
+            --exclude "shell,makefile,dockerfile,batchfile,procfile"
+
 
       # Self-hosted stat and repo cards.
       - name: Stat and repo cards
