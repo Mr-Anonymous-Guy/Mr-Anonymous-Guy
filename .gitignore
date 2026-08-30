@@ -1,6 +1,5 @@
 # Scratch & Temporary Scripts
 scratch/
-*.py
 *.pyc
 __pycache__/
 
