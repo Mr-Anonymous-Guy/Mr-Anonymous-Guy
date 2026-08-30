@@ -312,11 +312,13 @@ def main():
     for a in achievements:
         print(f"    ✓ {a['title']}: {a['subtitle']}")
 
-    svg = render_achievements_svg(achievements, args.user, "dark")
-    dest = args.out / "metrics.achievements.svg"
-    dest.write_text(svg, encoding="utf-8")
-    print(f"  Wrote {dest}")
+    for theme in ("dark", "light"):
+        dest = args.out / f"card-achievements-{theme}.svg"
+        dest.write_text(render_achievements_svg(achievements, args.user, theme), encoding="utf-8")
+    (args.out / "metrics.achievements.svg").write_text(render_achievements_svg(achievements, args.user, "dark"), encoding="utf-8")
+    print("  Wrote card-achievements-*.svg and metrics.achievements.svg")
 
 
 if __name__ == "__main__":
     main()
+

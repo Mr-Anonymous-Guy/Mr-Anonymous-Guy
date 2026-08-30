@@ -158,21 +158,26 @@ def analyze_habits(events: list[dict], user: str, tz_offset_hours: float = 5.5,
 # SVG Rendering
 # --------------------------------------------------------------------------- #
 
-def render_habits_svg(habits: dict, user: str) -> str:
-    """Render a modern dark-mode SVG card showing coding habits."""
+THEMES = {
+    "dark": {
+        "bg": "#0d1117", "border": "#30363d", "title": "#39d353",
+        "text": "#e6edf3", "muted": "#8b949e", "card_bg": "#161b22",
+        "bar_active": "#39d353", "bar_inactive": "#21262d", "bar_day_active": "#58a6ff"
+    },
+    "light": {
+        "bg": "#ffffff", "border": "#d0d7de", "title": "#1a7f37",
+        "text": "#1f2328", "muted": "#57606a", "card_bg": "#f6f8fa",
+        "bar_active": "#1a7f37", "bar_inactive": "#eaeef2", "bar_day_active": "#0969da"
+    },
+}
+
+
+def render_habits_svg(habits: dict, user: str, theme: str = "dark") -> str:
+    """Render a modern SVG card showing coding habits."""
+    c = THEMES[theme]
     W = 480
     H = 290
     pad = 20
-
-    # Theme colors
-    bg = "#0d1117"
-    border = "#30363d"
-    title_color = "#39d353"
-    text_primary = "#e6edf3"
-    text_muted = "#8b949e"
-    bar_active = "#39d353"
-    bar_inactive = "#21262d"
-    bar_day_active = "#58a6ff"
 
     hours = habits["hours"]
     max_h = max(max(hours), 1)
@@ -186,21 +191,21 @@ def render_habits_svg(habits: dict, user: str) -> str:
         f'width="{W}" height="{H}" role="img" '
         f'aria-label="{esc(user)} coding habits" font-family="{FONT}">',
         f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="10" '
-        f'fill="{bg}" stroke="{border}"/>',
+        f'fill="{c["bg"]}" stroke="{c["border"]}"/>',
         # Header
         f'<text x="{pad}" y="{pad + 14}" font-size="15" font-weight="700" '
-        f'fill="{title_color}">Recent Coding Habits</text>',
+        f'fill="{c["title"]}">Recent Coding Habits</text>',
         f'<text x="{W - pad}" y="{pad + 14}" font-size="11" text-anchor="end" '
-        f'fill="{text_muted}">past {habits["days_limit"]} days • Asia/Kolkata</text>',
+        f'fill="{c["muted"]}">past {habits["days_limit"]} days • Asia/Kolkata</text>',
         f'<line x1="{pad}" y1="{pad + 24}" x2="{W - pad}" y2="{pad + 24}" '
-        f'stroke="{border}"/>',
+        f'stroke="{c["border"]}"/>',
     ]
 
     # Section 1: Hourly Distribution (24 bars)
     chart_y = pad + 38
     parts.append(
         f'<text x="{pad}" y="{chart_y}" font-size="12" font-weight="600" '
-        f'fill="{text_primary}">Commit Activity by Hour of Day</text>'
+        f'fill="{c["text"]}">Commit Activity by Hour of Day</text>'
     )
 
     bar_area_y = chart_y + 12
@@ -212,7 +217,7 @@ def render_habits_svg(habits: dict, user: str) -> str:
         bh = max(3, int((val / max_h) * bar_area_h)) if val > 0 else 3
         bx = pad + i * col_w + 2
         by = bar_area_y + (bar_area_h - bh)
-        b_color = bar_active if val > 0 else bar_inactive
+        b_color = c["bar_active"] if val > 0 else c["bar_inactive"]
         opacity = "1" if val > 0 else "0.5"
 
         parts.append(
@@ -227,18 +232,18 @@ def render_habits_svg(habits: dict, user: str) -> str:
         lx = pad + h_mark * col_w + (col_w / 2)
         parts.append(
             f'<text x="{lx:.1f}" y="{lbl_y}" font-size="9" text-anchor="middle" '
-            f'fill="{text_muted}">{h_mark:02d}h</text>'
+            f'fill="{c["muted"]}">{h_mark:02d}h</text>'
         )
 
     # Section 2: Weekday Distribution (7 bars)
     week_y = lbl_y + 20
     parts.append(
         f'<line x1="{pad}" y1="{week_y - 8}" x2="{W - pad}" y2="{week_y - 8}" '
-        f'stroke="{border}"/>'
+        f'stroke="{c["border"]}"/>'
     )
     parts.append(
         f'<text x="{pad}" y="{week_y + 6}" font-size="12" font-weight="600" '
-        f'fill="{text_primary}">Activity by Day of Week</text>'
+        f'fill="{c["text"]}">Activity by Day of Week</text>'
     )
 
     day_area_y = week_y + 16
@@ -250,7 +255,7 @@ def render_habits_svg(habits: dict, user: str) -> str:
         d_bh = max(3, int((d_val / max_d) * day_area_h)) if d_val > 0 else 3
         d_bx = pad + j * d_col_w + 6
         d_by = day_area_y + (day_area_h - d_bh)
-        d_color = bar_day_active if d_val > 0 else bar_inactive
+        d_color = c["bar_day_active"] if d_val > 0 else c["bar_inactive"]
 
         parts.append(
             f'<rect x="{d_bx:.1f}" y="{d_by:.1f}" width="{d_col_w - 12:.1f}" height="{d_bh:.1f}" '
@@ -260,13 +265,13 @@ def render_habits_svg(habits: dict, user: str) -> str:
         # Day label
         parts.append(
             f'<text x="{pad + j * d_col_w + d_col_w / 2:.1f}" y="{day_area_y + day_area_h + 12}" '
-            f'font-size="9.5" text-anchor="middle" fill="{text_muted}">{day_labels[j]}</text>'
+            f'font-size="9.5" text-anchor="middle" fill="{c["muted"]}">{day_labels[j]}</text>'
         )
 
     # Section 3: Summary Highlights / Badges at bottom
     badge_y = day_area_y + day_area_h + 24
     parts.append(
-        f'<line x1="{pad}" y1="{badge_y}" x2="{W - pad}" y2="{badge_y}" stroke="{border}"/>'
+        f'<line x1="{pad}" y1="{badge_y}" x2="{W - pad}" y2="{badge_y}" stroke="{c["border"]}"/>'
     )
 
     box_w = (W - 2 * pad - 16) / 3
@@ -281,10 +286,10 @@ def render_habits_svg(habits: dict, user: str) -> str:
         fy = badge_y + 8
         parts.append(
             f'<rect x="{fx:.1f}" y="{fy:.1f}" width="{box_w:.1f}" height="26" rx="4" '
-            f'fill="#161b22" stroke="{border}"/>'
+            f'fill="{c["card_bg"]}" stroke="{c["border"]}"/>'
             f'<text x="{fx + 8:.1f}" y="{fy + 17:.1f}" font-size="11">{icon}</text>'
-            f'<text x="{fx + 24:.1f}" y="{fy + 13:.1f}" font-size="8.5" fill="{text_muted}">{label}</text>'
-            f'<text x="{fx + 24:.1f}" y="{fy + 22:.1f}" font-size="9.5" font-weight="600" fill="{text_primary}">{esc(val_text)}</text>'
+            f'<text x="{fx + 24:.1f}" y="{fy + 13:.1f}" font-size="8.5" fill="{c["muted"]}">{label}</text>'
+            f'<text x="{fx + 24:.1f}" y="{fy + 22:.1f}" font-size="9.5" font-weight="600" fill="{c["text"]}">{esc(val_text)}</text>'
         )
 
     parts.append('</svg>')
@@ -318,11 +323,13 @@ def main():
     print(f"  Analyzed {habits['total_commits']} commits across {habits['active_days_count']} active days")
     print(f"  Pattern: {habits['habit_type']} • Peak: {habits['peak_hour']} • Most active: {habits['most_active_day']}")
 
-    svg = render_habits_svg(habits, args.user)
-    dest = args.out / "metrics.habits.svg"
-    dest.write_text(svg, encoding="utf-8")
-    print(f"  Wrote {dest}")
+    for theme in ("dark", "light"):
+        dest = args.out / f"card-habits-{theme}.svg"
+        dest.write_text(render_habits_svg(habits, args.user, theme), encoding="utf-8")
+    (args.out / "metrics.habits.svg").write_text(render_habits_svg(habits, args.user, "dark"), encoding="utf-8")
+    print("  Wrote card-habits-*.svg and metrics.habits.svg")
 
 
 if __name__ == "__main__":
     main()
+

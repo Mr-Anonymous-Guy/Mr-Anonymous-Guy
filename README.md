@@ -129,12 +129,21 @@ Hi, I'm **Tutun Mahapatra** (also known as **Mr. Anonymous**). I build software 
 <br><br>
 
 <!-- Recent Coding Habits Card -->
-<img src="assets/metrics.habits.svg" width="480" alt="recent coding habits">
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/card-habits-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/card-habits-light.svg">
+  <img src="assets/card-habits-dark.svg" width="480" alt="recent coding habits">
+</picture>
 
 <br><br>
 
 <!-- Achievements Card -->
-<img src="assets/metrics.achievements.svg" width="480" alt="achievements">
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/card-achievements-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/card-achievements-light.svg">
+  <img src="assets/card-achievements-dark.svg" width="480" alt="achievements">
+</picture>
+
 
 </div>
 
