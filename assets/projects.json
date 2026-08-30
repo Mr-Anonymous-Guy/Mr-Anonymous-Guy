@@ -1,0 +1,21 @@
+{
+  "_comment": "Featured repos for Mr-Anonymous-Guy. Star/fork/language come live from the API on every run.",
+  "projects": [
+    {
+      "repo": "Fhir-Tech",
+      "description": "Healthcare data and interoperability platform built around modern FHIR standards with structured clinical workflows."
+    },
+    {
+      "repo": "Healthcare_AI_Prototype",
+      "description": "An interactive medical AI assistant prototype delivering intelligent clinical insights, triage support, and diagnosis workflows."
+    },
+    {
+      "repo": "Nexterm",
+      "description": "A developer-focused custom terminal environment and shell built in Python for streamlined daily development workflows."
+    },
+    {
+      "repo": "Wether",
+      "description": "A responsive, modern weather application delivering real-time forecasts, atmospheric metrics, and sleek visual condition cards."
+    }
+  ]
+}

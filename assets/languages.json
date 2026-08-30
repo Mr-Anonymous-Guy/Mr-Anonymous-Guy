@@ -1,0 +1,12 @@
+{
+  "title": "Mr-Anonymous-Guy · language mix",
+  "axes": [
+    { "label": "Python", "value": 85 },
+    { "label": "Java", "value": 80 },
+    { "label": "JS", "value": 75 },
+    { "label": "TypeScript", "value": 70 },
+    { "label": "CSS", "value": 70 },
+    { "label": "C", "value": 65 },
+    { "label": "C++", "value": 65 }
+  ]
+}
