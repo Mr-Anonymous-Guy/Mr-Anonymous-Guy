@@ -6,13 +6,6 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths:
-      - "assets/skills.json"
-      - "assets/languages.json"
-      - "assets/projects.json"
-      - "scripts/radar.py"
-      - "scripts/cards.py"
-      - ".github/workflows/radar.yml"
 
 permissions:
   contents: write
