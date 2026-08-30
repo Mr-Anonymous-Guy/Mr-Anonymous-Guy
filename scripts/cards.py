@@ -284,39 +284,6 @@ def render_repo(repo, theme):
 # --------------------------------------------------------------------------- #
 
 
-def render_achievements(user, theme):
-    c = THEMES[theme]
-    W, H = 480, 105
-    pad = 18
-    out = [
-        f'<text x="{pad}" y="{pad + 14}" font-size="15" font-weight="700" '
-        f'fill="{c["title"]}">Achievements</text>',
-        f'<text x="{W - pad}" y="{pad + 14}" font-size="11" text-anchor="end" '
-        f'fill="{c["muted"]}">unlocked</text>',
-        f'<line x1="{pad}" y1="{pad + 24}" x2="{W - pad}" y2="{pad + 24}" '
-        f'stroke="{c["border"]}"/>',
-    ]
-    badges = [
-        ("Pull Shark", "Merged PRs", "#39d353"),
-        ("Quickdraw", "Fast closer", "#58a6ff"),
-        ("Pair Extraordinaire", "Co-authored", "#f0883e"),
-        ("YOLO", "Direct merge", "#bc8cff"),
-    ]
-    bw = (W - 2 * pad) / len(badges)
-    for i, (title, sub, color) in enumerate(badges):
-        bx = pad + i * bw
-        by = pad + 40
-        out.append(
-            f'<g transform="translate({bx + bw/2 - 16:.1f}, {by})">'
-            f'<circle cx="16" cy="16" r="14" fill="{c["bg"]}" stroke="{color}" stroke-width="2"/>'
-            f'<text x="16" y="21" text-anchor="middle" font-size="13" fill="{color}">★</text>'
-            f'</g>'
-            f'<text x="{bx + bw/2:.1f}" y="{by + 44}" text-anchor="middle" font-size="11" font-weight="600" fill="{c["value"]}">{esc(title)}</text>'
-            f'<text x="{bx + bw/2:.1f}" y="{by + 56}" text-anchor="middle" font-size="9" fill="{c["muted"]}">{esc(sub)}</text>'
-        )
-    return frame(W, H + 18, c, "".join(out), f"{user} Achievements")
-
-
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -358,10 +325,6 @@ def main(argv=None):
         dest = args.out / f"card-stats-{theme}.svg"
         dest.write_text(render_stats(args.user, tiles, theme), encoding="utf-8")
     print(f"wrote card-stats-*.svg  ({len(tiles)} tiles)")
-
-    ach_dest = args.out / "metrics.achievements.svg"
-    ach_dest.write_text(render_achievements(args.user, "dark"), encoding="utf-8")
-    print("wrote metrics.achievements.svg")
 
     if not args.projects.exists():
         print(f"no {args.projects}, skipping repo cards")
