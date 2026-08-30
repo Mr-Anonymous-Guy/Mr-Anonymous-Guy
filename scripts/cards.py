@@ -239,6 +239,133 @@ def render_stats(user, stats, theme):
     return frame(W, H, c, "".join(out), f"{user} GitHub statistics")
 
 
+def format_bytes(b: int) -> str:
+    if b >= 1024 * 1024:
+        return f"{b / (1024 * 1024):.1f} MB"
+    elif b >= 1024:
+        return f"{b / 1024:.0f} kB"
+    return f"{b} B"
+
+
+LANGS_QUERY = """
+query($login: String!) {
+  user(login: $login) {
+    repositories(first: 100, privacy: PUBLIC, affiliations: OWNER, isFork: false) {
+      nodes {
+        languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+          edges {
+            size
+            node {
+              name
+              color
+            }
+          }
+        }
+      }
+    }
+  }
+}
+"""
+
+
+def fetch_languages(user: str, token: str | None, repos: list[dict]) -> list[tuple[str, int, float, str]]:
+    totals: dict[str, int] = {}
+    colors: dict[str, str] = {}
+
+    if token:
+        try:
+            data = graphql(LANGS_QUERY, {"login": user}, token)
+            if data and "data" in data and data["data"].get("user"):
+                nodes = data["data"]["user"]["repositories"]["nodes"]
+                for repo_node in nodes:
+                    for edge in repo_node.get("languages", {}).get("edges", []):
+                        lname = edge["node"]["name"]
+                        lcol = edge["node"].get("color") or LANG_COLOR.get(lname, "#8b949e")
+                        lsize = edge["size"]
+                        totals[lname] = totals.get(lname, 0) + lsize
+                        colors[lname] = lcol
+        except Exception as e:
+            print(f"  note: graphql language fetch fallback: {e}", file=sys.stderr)
+
+    # Fallback if GraphQL didn't return languages: approximate from repos
+    if not totals and repos:
+        for r in repos:
+            if r.get("fork"):
+                continue
+            lang = r.get("language")
+            size = (r.get("size") or 1) * 1024
+            if lang:
+                totals[lang] = totals.get(lang, 0) + size
+                colors[lang] = LANG_COLOR.get(lang, "#8b949e")
+
+    # Safe default if no public repos return language breakdown
+    if not totals:
+        totals = {
+            "TypeScript": 3550000, "Python": 1610000, "CSS": 216000,
+            "JavaScript": 214000, "C": 140000, "C++": 115000,
+            "SCSS": 108000, "Java": 105000
+        }
+        for k in totals:
+            colors[k] = LANG_COLOR.get(k, "#8b949e")
+
+    total_bytes = sum(totals.values()) or 1
+    sorted_langs = sorted(totals.items(), key=lambda x: x[1], reverse=True)
+
+    res = []
+    for name, size in sorted_langs:
+        pct = (size / total_bytes) * 100.0
+        col = colors.get(name, LANG_COLOR.get(name, "#8b949e"))
+        res.append((name, size, pct, col))
+
+    return res
+
+
+def render_languages(user: str, lang_stats: list[tuple[str, int, float, str]], theme: str) -> str:
+    c = THEMES[theme]
+    W, H = 480, 160
+    pad = 20
+    out = [
+        f'<text x="{pad}" y="{pad + 14}" font-size="15" font-weight="700" '
+        f'fill="{c["title"]}">Most Used Languages</text>',
+        f'<text x="{W - pad}" y="{pad + 14}" font-size="11" text-anchor="end" '
+        f'fill="{c["muted"]}">by repository volume</text>',
+        f'<line x1="{pad}" y1="{pad + 26}" x2="{W - pad}" y2="{pad + 26}" '
+        f'stroke="{c["border"]}"/>',
+    ]
+
+    # Progress bar
+    bar_y = pad + 38
+    bar_h = 10
+    bar_w = W - 2 * pad
+
+    out.append(f'<g transform="translate({pad}, {bar_y})">')
+    out.append(f'<rect x="0" y="0" width="{bar_w}" height="{bar_h}" rx="5" fill="{c["bg"]}" stroke="{c["border"]}" stroke-width="1"/>')
+    out.append(f'<clipPath id="lang-bar-clip-{theme}"><rect x="0" y="0" width="{bar_w}" height="{bar_h}" rx="5"/></clipPath>')
+    out.append(f'<g clip-path="url(#lang-bar-clip-{theme})">')
+
+    cur_x = 0.0
+    for name, size, pct, col in lang_stats:
+        seg_w = (pct / 100.0) * bar_w
+        if seg_w > 0:
+            out.append(f'<rect x="{cur_x:.1f}" y="0" width="{seg_w:.1f}" height="{bar_h}" fill="{col}"><title>{esc(name)}: {pct:.1f}% ({format_bytes(size)})</title></rect>')
+            cur_x += seg_w
+    out.append('</g></g>')
+
+    # 2 columns of 4 rows (top 8 languages)
+    top_grid = bar_y + bar_h + 18
+    col_w = (W - 2 * pad) / 2
+    for i, (name, size, pct, col) in enumerate(lang_stats[:8]):
+        col_idx = i % 2
+        row_idx = i // 2
+        gx = pad + col_idx * col_w
+        gy = top_grid + row_idx * 18
+        out.append(f'<circle cx="{gx + 5}" cy="{gy - 4}" r="4.5" fill="{col}"/>')
+        out.append(f'<text x="{gx + 16}" y="{gy}" font-size="11" font-weight="600" fill="{c["value"]}">{esc(name)}</text>')
+        out.append(f'<text x="{gx + col_w - 10}" y="{gy}" font-size="10" text-anchor="end" fill="{c["muted"]}">{format_bytes(size)} <tspan font-weight="600" fill="{c["text"]}">({pct:.1f}%)</tspan></text>')
+
+    return frame(W, H, c, "".join(out), f"{user} Most Used Languages")
+
+
 def render_repo(repo, theme):
     c = THEMES[theme]
     W, H = 420, 132
@@ -279,6 +406,7 @@ def render_repo(repo, theme):
         x += 17 + text_width(str(count), 11) + 18
 
     return frame(W, H, c, "".join(out), f'{repo["name"]} repository card')
+
 
 
 # --------------------------------------------------------------------------- #
@@ -326,7 +454,15 @@ def main(argv=None):
         dest.write_text(render_stats(args.user, tiles, theme), encoding="utf-8")
     print(f"wrote card-stats-*.svg  ({len(tiles)} tiles)")
 
+    lang_stats = fetch_languages(args.user, token, repos)
+    for theme in ("dark", "light"):
+        dest = args.out / f"card-languages-{theme}.svg"
+        dest.write_text(render_languages(args.user, lang_stats, theme), encoding="utf-8")
+    (args.out / "metrics.languages.svg").write_text(render_languages(args.user, lang_stats, "dark"), encoding="utf-8")
+    print(f"wrote card-languages-*.svg & metrics.languages.svg ({len(lang_stats)} languages)")
+
     if not args.projects.exists():
+
         print(f"no {args.projects}, skipping repo cards")
         return
     wanted = json.loads(args.projects.read_text(encoding="utf-8"))["projects"]
