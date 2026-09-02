@@ -1,7 +1,7 @@
 ###############################################################################
 #  Profile Sync — Unified Daily Pipeline
 #
-#  Combines the former jet-heatmap, radar/cards, metrics, and snake workflows
+#  Combines the former radar/cards, metrics, and snake workflows
 #  into a single sequential pipeline that runs at midnight UTC every day.
 #
 #  Triggers:
@@ -37,28 +37,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
       - name: Setup Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      # ── Phase 1: Jet Heatmap (Node.js) ─────────────────────────────────
-      # Fetches 34-week contribution calendar via GraphQL and generates
-      # an animated SVG with a jet fighter firing lasers at peak days.
-
-      - name: Generate jet heatmap SVG
-        env:
-          GH_USERNAME: ${{ github.repository_owner }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OUTPUT_PATH: dist/github-jet.svg
-        run: node generate.mjs
-
-      # ── Phase 2: Python Analysis Engines ───────────────────────────────
+      # ── Phase 1: Python Analysis Engines ───────────────────────────────
       # Runs all self-hosted Python SVG generators sequentially.
 
       # Hand-authored skill radar (edit assets/skills.json to change it)
@@ -105,18 +89,18 @@ jobs:
             --out assets \
             --timezone 5.5
 
-      # ── Phase 3: Atomic Commit (Custom Generators) ─────────────────────
-      # Bundles all Python/Node outputs into a single commit.
+      # ── Phase 2: Atomic Commit (Custom Generators) ─────────────────────
+      # Bundles all Python outputs into a single commit.
 
       - name: Commit custom assets to main
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/*.svg dist/github-jet.svg
+          git add assets/*.svg
           git diff --staged --quiet || git commit -m "chore: daily profile sync [skip ci]"
           git push
 
-      # ── Phase 4: 3D Isometric Calendar (lowlighter/metrics) ────────────
+      # ── Phase 3: 3D Isometric Calendar (lowlighter/metrics) ────────────
       # The metrics action handles its own commit internally.
       # Commit message includes [skip ci] to prevent triggering other runs.
 
@@ -132,7 +116,7 @@ jobs:
           plugin_isocalendar_duration: full-year
           committer_message: "chore: update isocalendar [skip ci]"
 
-      # ── Phase 5: Snake Animation (output branch) ───────────────────────
+      # ── Phase 4: Snake Animation (output branch) ───────────────────────
       # Generates snake eating the contribution graph, pushes to the
       # separate 'output' branch that the README references.
 
