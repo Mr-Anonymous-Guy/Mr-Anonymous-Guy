@@ -1,0 +1,155 @@
+###############################################################################
+#  Profile Sync — Unified Daily Pipeline
+#
+#  Combines the former jet-heatmap, radar/cards, metrics, and snake workflows
+#  into a single sequential pipeline that runs at midnight UTC every day.
+#
+#  Triggers:
+#    1. Schedule  — midnight UTC (0 0 * * *)
+#    2. Manual    — workflow_dispatch (click "Run workflow" in Actions tab)
+#    3. Repo event— repository_dispatch (when a repo is created/deleted)
+#
+#  Safety:
+#    - No `push: branches: [main]` trigger → prevents infinite commit loops
+#    - All commit messages include [skip ci] as a secondary safety layer
+#    - Sequential step execution → no merge race conditions
+###############################################################################
+
+name: Profile Sync
+
+on:
+  schedule:
+    - cron: "0 0 * * *"           # Midnight UTC daily
+  workflow_dispatch: {}            # Manual trigger
+  repository_dispatch:             # External event trigger
+    types: [profile-sync, repo-event]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+
+      # ── Checkout & Environment ─────────────────────────────────────────
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # ── Phase 1: Jet Heatmap (Node.js) ─────────────────────────────────
+      # Fetches 34-week contribution calendar via GraphQL and generates
+      # an animated SVG with a jet fighter firing lasers at peak days.
+
+      - name: Generate jet heatmap SVG
+        env:
+          GH_USERNAME: ${{ github.repository_owner }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OUTPUT_PATH: dist/github-jet.svg
+        run: node generate.mjs
+
+      # ── Phase 2: Python Analysis Engines ───────────────────────────────
+      # Runs all self-hosted Python SVG generators sequentially.
+
+      # Hand-authored skill radar (edit assets/skills.json to change it)
+      - name: Skill radar
+        run: python scripts/radar.py --data assets/skills.json -o assets/radar
+
+      # Language radar (calculated live from real language byte counts)
+      - name: Language radar
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/radar.py \
+            --github "${{ github.repository_owner }}" \
+            -o assets/radar-langs \
+            --limit 7 --values --curve 0.4 \
+            --exclude "shell,makefile,dockerfile,batchfile,procfile"
+
+      # Self-hosted stat and repo cards
+      - name: Stat and repo cards
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/cards.py \
+            --user "${{ github.repository_owner }}" \
+            --projects assets/projects.json \
+            --out assets
+
+      # Auto-generated achievements from live GitHub API data
+      - name: Achievements
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/achievements.py \
+            --user "${{ github.repository_owner }}" \
+            --out assets
+
+      # Auto-generated coding habits (hourly & weekday distributions)
+      - name: Coding habits
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/habits.py \
+            --user "${{ github.repository_owner }}" \
+            --out assets \
+            --timezone 5.5
+
+      # ── Phase 3: Atomic Commit (Custom Generators) ─────────────────────
+      # Bundles all Python/Node outputs into a single commit.
+
+      - name: Commit custom assets to main
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/*.svg dist/github-jet.svg
+          git diff --staged --quiet || git commit -m "chore: daily profile sync [skip ci]"
+          git push
+
+      # ── Phase 4: 3D Isometric Calendar (lowlighter/metrics) ────────────
+      # The metrics action handles its own commit internally.
+      # Commit message includes [skip ci] to prevent triggering other runs.
+
+      - name: 3D isometric contribution calendar
+        uses: lowlighter/metrics@master
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: ${{ github.repository_owner }}
+          filename: assets/metrics.isocalendar.svg
+          base: ""
+          config_timezone: Asia/Kolkata
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          committer_message: "chore: update isocalendar [skip ci]"
+
+      # ── Phase 5: Snake Animation (output branch) ───────────────────────
+      # Generates snake eating the contribution graph, pushes to the
+      # separate 'output' branch that the README references.
+
+      - name: Generate snake animations
+        uses: Platane/snk@v3
+        id: snake
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg
+            dist/snake-dark.svg?palette=github-dark
+            dist/snake.gif?color_snake=#39d353&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353
+
+      - name: Push snake to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
