@@ -2,10 +2,10 @@
 #  Profile Sync — Unified Daily Pipeline
 #
 #  Combines the former radar/cards, metrics, and snake workflows
-#  into a single sequential pipeline that runs at midnight UTC every day.
+#  into a single sequential pipeline that runs at 12:00 AM IST every day.
 #
 #  Triggers:
-#    1. Schedule  — midnight UTC (0 0 * * *)
+#    1. Schedule  — 12:00 AM IST / Midnight India (18:30 UTC: 30 18 * * *)
 #    2. Manual    — workflow_dispatch (click "Run workflow" in Actions tab)
 #    3. Repo event— repository_dispatch (when a repo is created/deleted)
 #
@@ -19,9 +19,9 @@ name: Profile Sync
 
 on:
   schedule:
-    - cron: "30 18 * * *" # 6:30 PM daily
-  workflow_dispatch: {} # Manual trigger
-  repository_dispatch: # External event trigger
+    - cron: "30 18 * * *"           # 12:00 AM IST (Midnight India / 18:30 UTC)
+  workflow_dispatch: {}            # Manual trigger
+  repository_dispatch:             # External event trigger
     types: [profile-sync, repo-event]
 
 permissions:
