@@ -19,9 +19,9 @@ name: Profile Sync
 
 on:
   schedule:
-    - cron: "0 0 * * *"           # Midnight UTC daily
-  workflow_dispatch: {}            # Manual trigger
-  repository_dispatch:             # External event trigger
+    - cron: "30 18 * * *" # 6:30 PM daily
+  workflow_dispatch: {} # Manual trigger
+  repository_dispatch: # External event trigger
     types: [profile-sync, repo-event]
 
 permissions:
@@ -31,7 +31,6 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-
       # ── Checkout & Environment ─────────────────────────────────────────
 
       - name: Checkout repository
